@@ -13,15 +13,31 @@ Multiline Comment
 //confirm("Do you like pokemon?");
 
 //prompt("What type of pokemon do you like?");
-
-
+var inventory = {
+    key:0,
+    note:0,
+    egg:0,
+    health:0,
+    instruction_Sheet:0,
+    stupid_Choice:0,
+    teddy_Bear:0,
+    lantern:0
+}
+/*if(SwordBuy){
+inventory.sword ++;
+alert("You own " +inventory.sword+" swords");
+inventory.coins = inventory.coins - 100;
+alert("You have "+inventory.coins+" coins remaining");
+Blacksmith();
+}
+*/
 function Game() {
-    document.write("Maze");
+    document.write("Uh oh Something Broke");
     var playerName = prompt("What is your name?");
     alert("Welcome to the maze "+playerName);
     Start();
     function Start() {
-        var start = prompt("You wake up...You take a look around and realize you have no memory. You... \n-look around \n- go back to sleep \n - think").toLowerCase();
+        var start = prompt("You wake up and have an ache in your side. You look around and realize you have mo memory of who you are. Do you... \n-look around \n- go back to sleep \n - think").toLowerCase();
         if(start == "look around" || start == "look"){
             var startLook = prompt("The floor is grassy and the roof is open to the sky. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase();
             if(startLook === "small opening" || "go to small opening"){
@@ -81,7 +97,7 @@ function Game() {
                             }
                             else if (thinkLook === "Go to writing" || "writing"){
                                 Wall();
-                }
+              }            }
             
             //think sleep
             if(startThink == "go back to sleep" || startThink =="sleep"){
@@ -106,14 +122,23 @@ function Game() {
     }
 
         }
-    }
+    
 
+}
+    }
 }
     function Wall(){
         alert("BREAD");
     }
     function Opening(){
-        alert("bread (but lowercase)")
+        if(lantern==0){
+        var opening = prompt("Once you arive at the opening you see a small cliff that you can go down but probably wont be able to get back up again. The small drop leads to a hall that slowly gets to dark to see any further. Do you \n -go back to the writing \n-go down the drop").ToLowerCase();
+        if (opening == "go to writing"||"writing"){
+            Wall();
+        }
+        if(opening == "go down the drop" || "drop")
+            var openingdrop = prompt("Wow that was dumb, now you won't know what you have to do in the puzzles, well good luck! You drop down the cliff and walk along a dimmly lit underground cavern. About half way through the dimmly lit cavern turns into a non lit cavern and you decide to keep going.")
+        }
         
     }
 Game();
