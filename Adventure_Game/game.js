@@ -17,7 +17,7 @@ var inventory = {
     key:0,
     note:0,
     egg:0,
-    health:0,
+    health:1000,
     instruction_Sheet:0,
     stupid_Choice:0,
     teddy_Bear:0,
@@ -30,11 +30,40 @@ inventory.coins = inventory.coins - 100;
 alert("You have "+inventory.coins+" coins remaining");
 Blacksmith();
 }
+
+
+function Castle(){
+var insideCastle=prompt("-upstairs-downstairs-courtyard-balcony-look);
+
+switch(insideCastle){
+case "upstairs":
+    var upstairs = prompt("You walk a longflight of stairs to the top floor of the castle.");
+    
+    Castle();
+    break;
+    
+    case "downstairs":
+    alert("you go downstairs");
+    Castle();
+    break;
+    
+    case "courtyard":
+    alert("you go to the courtyard");
+    Castle();
+    break;
+    
+    case "balcony":
+    alert("you go to the balcony");
+    Castle();
+    break;
+}
+}
 */
+Game();
 function Game() {
     document.write("Uh oh Something Broke");
     var playerName = prompt("What is your name?");
-    alert("Welcome to the maze "+playerName);
+    alert("Welcome to the puzzle "+playerName);
     Start();
     function Start() {
         var start = prompt("You wake up and have an ache in your side. You look around and realize you have mo memory of who you are. Do you... \n-look around \n- go back to sleep \n - think").toLowerCase();
@@ -113,12 +142,12 @@ function Game() {
             }
              if(thinkSleep == "look around" || startSleep == "look"){
             var thinkSleepLook = prompt("The floor is grassy and the roof is open to the sky. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase();
-                     if(thinkSleepLook === "small opening" || "go to small opening"){
+                     if(thinkSleepLook === "small opening" || thinkSleepLook === "go to small opening"){
                                 Opening();
                             }
-                            else if (thinkSleepLook === "Go to writing" || "writing"){
+                            else if (thinkSleepLook === "Go to writing" || thinkSleepLook === "writing"){
                                 Wall();
-        }
+                            }
     }
 
         }
@@ -131,15 +160,21 @@ function Game() {
         alert("BREAD");
     }
     function Opening(){
-        if(lantern==0){
-        var opening = prompt("Once you arive at the opening you see a small cliff that you can go down but probably wont be able to get back up again. The small drop leads to a hall that slowly gets to dark to see any further. Do you \n -go back to the writing \n-go down the drop").ToLowerCase();
-        if (opening == "go to writing"||"writing"){
+        var openingstart = prompt("Once you arive at the opening you see a small cliff that you can go down but probably wont be able to get back up again. The small drop leads to a hall that slowly gets to dark to see any further. Do you \n - go back to the writing \n - go down the drop").toLowerCase();
+         
+        if (openingstart === "go back to the writing" || openingstart === "writing"){
             Wall();
+            }
+        else if(openingstart === "go down the drop" || "drop"){
+            alert("Wow that was dumb, now you won't know what you have to do in the puzzles, well good luck! You drop down the cliff and walk along a dimmly lit underground cavern. About half way through the dimmly lit cavern turns into a non lit cavern and you decide to keep going. after walking in pure darkness for about 5 minutes you start to see a dim light at the end of the tunnel, you also see a glowing pair of white eyes. Once you see the glowing pair of eyes you realize you probably shouldn't have come down here first. The eyes start getting closer and you hear a faint growling. You turn to try to run but it is faster than you. It catches you and brings us to the end of your story.");
+            alert("YOU DIED");
+            Opening();
         }
-        if(opening == "go down the drop" || "drop")
-            var openingdrop = prompt("Wow that was dumb, now you won't know what you have to do in the puzzles, well good luck! You drop down the cliff and walk along a dimmly lit underground cavern. About half way through the dimmly lit cavern turns into a non lit cavern and you decide to keep going.")
-        }
-        
     }
-Game();
+     
+         
+     
+         
+    
+
 
