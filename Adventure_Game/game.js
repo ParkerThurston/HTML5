@@ -81,19 +81,19 @@ var inventory = {
 function GetRandInt(max){
 var randInt = math.floor(Math.random()* Math.floor(max));
 }
-var treeStart = ["is one tree", "are two trees", "are three trees"]
+var treeStart = ["are two trees", "are three trees", "are four trees"]
 
 
 Wall();
 function Game() {
-    document.write("Uh oh Something Broke, Either the Answer you typed wasn't recongnized or Something Broke, Reload the page and try again");
+    document.write("Thanks for playing! Hope you enjoyed your stay in the puzzle \n If you didn't mean to stop playing either the Answer you typed wasn't recongnized or bomething broke, Reload the page and try again if you want to continue ");
     var playerName = prompt("What is your name?");
     alert("Welcome to the puzzle "+playerName);
     Start();
     function Start() {
         var start = prompt("You wake up and have an ache in your side. You look around and realize you have no memory of who you are. Do you \n-look around \n- go back to sleep \n - think").toLowerCase();
         if(start == "look around" || start == "look"){
-            var startLook = prompt("The floor is grassy and the roof is open to the sky. There "+treeStart[Math.floor(Math.random()*3)]+" to the left of you that expands about half way up the wall. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase();
+            var startLook = prompt("The floor is grassy and the roof is open to the sky. There "+treeStart[Math.floor(Math.random()*3)]+" to the left of you that expands about half way up the wall. They seems almost made of metal too and their strange appearance stick with you. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase();
             if(startLook === "small opening" || "go to small opening"){
                                 Opening();
                             }
@@ -182,7 +182,7 @@ function Game() {
     }
 }
     function Wall(){
-        var wallObjects = prompt("You walk up to the wall and it reads as so. \n You have been recruited to solve our puzzle, once you go down the drop there is no coming back so take these items before you leaf. Good luck on your test and we hope to see you on the other side. \n There are five objects on the ground being a key, an egg, a note, a teddy bear, and a lantern. Do you want to \n - take all \n - take key \n - take egg \n - take note \n - take teddy bear \n - take lantern \n - go to small opening")
+        var wallObjects = prompt("You walk up to the wall and it reads as so. \n You have been recruited to solve our puzzle, once you go down the drop there is no coming back so take these items before you leaf. Good luck on your test and we hope to see you on the other side. \n There are five objects in a backpack on the ground being a key, a golden egg, a note, a teddy bear, and a lantern. Do you want to \n - take all \n - take key \n - take egg \n - take note \n - take teddy bear \n - take lantern \n - go to small opening")
         switch(wallObjects){
             case "take key": case "key":
                 inventory.key=1;
@@ -196,7 +196,7 @@ function Game() {
                 
             case "take note": case "note":
                 inventory.note=1;
-                alert("The note reads \n The trees hold the key");
+                alert("The note reads \n THE METAL TREES HOLD THE KEYS");
                 var italics =str.italics();
                 Wall();
                 break;
@@ -267,9 +267,18 @@ function Game() {
                 break;
                 
                     case "wait":
-                        alert("You decide to wait to see how it reacts. After staying still for a couple seconds you realize it has no eyes and probably no sight, it does have some sort of nose it seems to smell with, and it does have very deformed ears it is able to hear with. Once you realize this it seems to react. It must have caught your sent and starts to move quicker towards you. If only you had something to feed it, it might leave you alone.");
+                        alert("You decide to wait to see how it reacts. After staying still for a couple seconds you realize it has no eyes and probably no sight, it does have some sort of nose it seems to smell with, and it does have very deformed ears it is able to hear with. Once you realize this it seems to react. It must have caught your sent and starts to move quicker towards you. Maybe If you had something to feed it, it might leave you alone.");
                         if(inventory.egg==1){
-                            
+                            alert("Luckily you do! It charges towards you but slows down right before you. You are frozen in fear as it sniff around you. It somehow makes it to your backpack and starts digging around. Once it has what it wants it quickly vanishes into the darkness.");
+                            var eggEat = prompt("Now that the beast is gone do you... \n - continue on \n - check your backpack").toLowerCase();
+                            if(eggEat=="continue on" ||eggEat == "continue"){
+                               alert("You decided to continue on and reach the end of the tunnel. Once you reach the end of the tunnel you see a ladder leading up into the light. You climb the ladder and ascend into the light.");
+                                TreePuzzle();
+                            }
+                            else if(eggEat == "check your backpack" || "backpack"){
+                                alert("You decide to check your backpack to see what it took. After a brief search you noticed it took the golden egg, hopefully you don't need that for the puzzle. It also left a slimy residue all over your bag. You decided to continue on and reach the end of the tunnel. Once you reach the end of the tunnel you see a ladder leading up into the light. You climb the ladder and ascend into the light.");
+                                TreePuzzle();
+                            }
                         }
                         else if(inventory.egg==0){
                             alert("Sadly you don't have anything to give it. It rapidly picks up speed and is coming towards you. You scream right as it reaches you but its no use. We have reached the end of your story.")
@@ -282,6 +291,20 @@ function Game() {
         
         }
        
+}
+function TreePuzzle(){
+    var tree = prompt("Once you reach the top of the ladder you find yourself in a well lit room, this room being the first puzzle room. Once you take a look around you notice a theme to the room, trees. There are trees painted on the wall, small plastic saplings on the ground, leaves hung on strings. If it weren't for the artificial lights on the ceiling you'd think you were in a forest. You remember the note and realize it might be important now. Do you \n - reread the note \n - look around the room").toLowerCase();
+    switch(tree){
+        case "reread the note": case "note":
+            alert("The note reads \n T> THE METAL TREES HOLD THE KEYS");
+            alert("You have vague memory of metal trees, what could that be about?")
+            TreePuzzle();
+            break;
+        case "think back on the trees at the start": case "trees at start":
+            break;
+        case "look around the room": case "look":
+            break;
+    }
 }
          
      
