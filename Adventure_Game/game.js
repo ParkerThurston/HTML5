@@ -69,14 +69,17 @@ var playerName = prompt("What is your name?");
 alert("Welcome to the land of Drizdal" +playerName);
 }
 */
-
+var treebackandlookvalue=0;
+var checkInventory = function(){
+    alert(" Key:" +inventory.key+"\n Note:"+inventory.key+"\n Egg:"+inventory.egg+"\n Teddy Bear:"+inventory.teddy_Bear+"\n Lantern:"+inventory.lantern);
+}
 
 var inventory = {
-    key:0,
-    note:0,
+    key:1,
+    note:1,
     egg:0,
-    teddy_Bear:0,
-    lantern:0,
+    teddy_Bear:1,
+    lantern:1,
 }
 function GetRandInt(max){
 var randInt = math.floor(Math.random()* Math.floor(max));
@@ -84,7 +87,7 @@ var randInt = math.floor(Math.random()* Math.floor(max));
 var treeStart = ["are two trees", "are three trees", "are four trees"]
 
 
-Wall();
+TreePuzzle();
 function Game() {
     document.write("Thanks for playing! Hope you enjoyed your stay in the puzzle \n If you didn't mean to stop playing either the Answer you typed wasn't recongnized or bomething broke, Reload the page and try again if you want to continue ");
     var playerName = prompt("What is your name?");
@@ -226,7 +229,7 @@ function Game() {
                 break;
                 
             default:
-                alert("I'm Sorry, I didn't understand that, try again");
+                alert("I'm sorry, I didn't understand that, try again");
                 Wall();
                 
         }
@@ -270,12 +273,14 @@ function Game() {
                         alert("You decide to wait to see how it reacts. After staying still for a couple seconds you realize it has no eyes and probably no sight, it does have some sort of nose it seems to smell with, and it does have very deformed ears it is able to hear with. Once you realize this it seems to react. It must have caught your sent and starts to move quicker towards you. Maybe If you had something to feed it, it might leave you alone.");
                         if(inventory.egg==1){
                             alert("Luckily you do! It charges towards you but slows down right before you. You are frozen in fear as it sniff around you. It somehow makes it to your backpack and starts digging around. Once it has what it wants it quickly vanishes into the darkness.");
+                            inventory.egg=0;
                             var eggEat = prompt("Now that the beast is gone do you... \n - continue on \n - check your backpack").toLowerCase();
                             if(eggEat=="continue on" ||eggEat == "continue"){
                                alert("You decided to continue on and reach the end of the tunnel. Once you reach the end of the tunnel you see a ladder leading up into the light. You climb the ladder and ascend into the light.");
                                 TreePuzzle();
                             }
                             else if(eggEat == "check your backpack" || "backpack"){
+                                checkInventory();
                                 alert("You decide to check your backpack to see what it took. After a brief search you noticed it took the golden egg, hopefully you don't need that for the puzzle. It also left a slimy residue all over your bag. You decided to continue on and reach the end of the tunnel. Once you reach the end of the tunnel you see a ladder leading up into the light. You climb the ladder and ascend into the light.");
                                 TreePuzzle();
                             }
@@ -293,18 +298,28 @@ function Game() {
        
 }
 function TreePuzzle(){
-    var tree = prompt("Once you reach the top of the ladder you find yourself in a well lit room, this room being the first puzzle room. Once you take a look around you notice a theme to the room, trees. There are trees painted on the wall, small plastic saplings on the ground, leaves hung on strings. If it weren't for the artificial lights on the ceiling you'd think you were in a forest. You remember the note and realize it might be important now. Do you \n - reread the note \n - look around the room").toLowerCase();
+    if(treebackandlookvalue==0 || treebackandlookvalue==1){
+    var tree = prompt("Once you reach the top of the ladder you find yourself in a well lit room, this room being the first puzzle room. Once you take a look around you notice a theme to the room, trees. There are trees painted on the wall, small plastic saplings on the ground, leaves hung on strings. If it weren't for the artificial lights on the ceiling you'd think you were in a forest. Do you \n - check your backpack \n - look around the room").toLowerCase();
     switch(tree){
-        case "reread the note": case "note":
-            alert("The note reads \n T> THE METAL TREES HOLD THE KEYS");
-            alert("You have vague memory of metal trees, what could that be about?")
+        case "check your backpack": case "backpack":
+            checkInventory();
+            alert("You decide to check your backpack and refresh your mind on what you could use for this puzzle and remember the note.");
+            alert("The note reads \n THE METAL TREES HOLD THE KEYS");
+            alert("You have vague memory of metal trees, what could that be about?");
+            treebackandlookvalue ++;
             TreePuzzle();
             break;
-        case "think back on the trees at the start": case "trees at start":
-            break;
         case "look around the room": case "look":
+            alert("You look around the room and see four leaf shaped objects on one the opposite side of the room, these indents are right next to a tree stump half way in the wall. You decided to walk closer and realize the four leaves are buttons with numbers on them. The far left one has a 1, the one to its right has a 2, then a 3, then a 4 Above the door it says the same thing on your note \n THE METAL TREES HOLD THE KEYS. \n Once closer the tree stump looks like it has a door carved out of it. You try to open it but it's locked. You also notice very small pinprick holes all over the roof.");
+            treebackandlookvalue ++;
+            TreePuzzle();
             break;
+        }
     }
+        if(treebackandlookvalue==2){
+            alert("You now have all the information you need to solve the puzzle. Press the right button and the door will open, press the wrong one and something worse will happen.");
+        }
+    
 }
          
      
