@@ -4,7 +4,7 @@
 Multiline Comment
 
 */
-
+/*
 // document.write("<h1><em>N<em></h1>");
 
 
@@ -13,7 +13,7 @@ Multiline Comment
 //confirm("Do you like pokemon?");
 
 //prompt("What type of pokemon do you like?");
-
+*/
 /*if(SwordBuy){
 inventory.sword ++;
 alert("You own " +inventory.sword+" swords");
@@ -69,6 +69,9 @@ var playerName = prompt("What is your name?");
 alert("Welcome to the land of Drizdal" +playerName);
 }
 */
+
+//Global Stuff
+/*
 var treebackandlookvalue=0;
 var checkInventory = function(){
     alert(" Key:" +inventory.key+"\n Note:"+inventory.key+"\n Egg:"+inventory.egg+"\n Teddy Bear:"+inventory.teddy_Bear+"\n Lantern:"+inventory.lantern);
@@ -85,9 +88,18 @@ function GetRandInt(max){
 var randInt = math.floor(Math.random()* Math.floor(max));
 }
 var treeStart = ["are two trees", "are three trees", "are four trees"]
-
-
-TreePuzzle();
+var treetreetree = treeStart[Math.floor(Math.random()*3)];
+if(treetreetree == "are two trees"){
+    var treepuzzleAmount = 2;
+}
+    else if (treetreetree == "are three trees"){
+        var treepuzzleAmount = 3;
+    }
+    else if(treetreetree == "are four trees"){
+    var treepuzzleAmount = 4;    
+    }
+    */
+Game();
 function Game() {
     document.write("Thanks for playing! Hope you enjoyed your stay in the puzzle \n If you didn't mean to stop playing either the Answer you typed wasn't recongnized or bomething broke, Reload the page and try again if you want to continue ");
     var playerName = prompt("What is your name?");
@@ -96,11 +108,11 @@ function Game() {
     function Start() {
         var start = prompt("You wake up and have an ache in your side. You look around and realize you have no memory of who you are. Do you \n-look around \n- go back to sleep \n - think").toLowerCase();
         if(start == "look around" || start == "look"){
-            var startLook = prompt("The floor is grassy and the roof is open to the sky. There "+treeStart[Math.floor(Math.random()*3)]+" to the left of you that expands about half way up the wall. They seems almost made of metal too and their strange appearance stick with you. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase();
-            if(startLook === "small opening" || "go to small opening"){
+            var startLook = prompt("The floor is grassy and the roof is open to the sky. There "+treetreetree+" to the left of you that expands about half way up the wall. They seems almost made of metal too and their strange appearance stick with you. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase();
+            if(startLook === "small opening" || startLook === "go to small opening"){
                                 Opening();
                             }
-                            else if (sleepThinkLook === "Go to writing" || "writing"){
+                            else if (startLook === "Go to writing" || startLook === "writing"){
                                 Wall();
                             }
         }
@@ -114,22 +126,22 @@ function Game() {
                 
                 if(startSleep === "think"){
                     var quiterThink = prompt ("You decide trying to remember who you are is the best option for you. After trying hard to remember who you are and why you are at this strange place your head starts to hurt and you don't remember anything. Congrats you just wasted like 15 minutes, you should probably get moving. The options are the same \n - look around").toLowerCase();
-                    if(quiterThink === "look around" || "look"){
+                    if(quiterThink === "look around" || quiterThink === "look"){
                 var sleepThinkLook = prompt("The floor is grassy and the roof is open to the sky. There "+treeStart[Math.floor(Math.random()*3)]+" to the left of you that expands about half way up the wall. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase(); 
-                            if(sleepThinkLook === "small opening" || "go to small opening"){
+                            if(sleepThinkLook === "small opening" || sleepThinkLook === "go to small opening"){
                                 Opening();
                             }
-                            else if (sleepThinkLook === "Go to writing" || "writing"){
+                            else if (sleepThinkLook === "Go to writing" || sleepThinkLook === "writing"){
                                 Wall();
                             }
                         }
                 }
                  else if(startSleep === "look around" || startSleep === "look"){
             var quiterLook = prompt("The floor is grassy and the roof is open to the sky. There "+treeStart[Math.floor(Math.random()*3)]+" to the left of you that expands about half way up the wall. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase();
-                     if(quiterLook === "small opening" || "go to small opening"){
+                     if(quiterLook === "small opening" || quiterLook === "go to small opening"){
                                 Opening();
                             }
-                            else if (quiterLook === "Go to writing" || "writing"){
+                            else if (quiterLook === "Go to writing" || quiterLook === "writing"){
                                 Wall();
                  }
             }
@@ -149,10 +161,10 @@ function Game() {
             //thinklook
             if(startThink == "look around" || start == "look"){
             var thinkLook = prompt("The floor is grassy and the roof is open to the sky. There "+treeStart[Math.floor(Math.random()*3)]+" to the left of you that expands about half way up the wall. The walls around you expand up hundred of feet and there is only one way to go, a small opening in the wall. Upon further inspection you see a wall with writing on it that looks important. Do you \n - go to writing \n - go to small opening.").toLowerCase();
-                     if(thinkLook === "small opening" || "go to small opening"){
+                     if(thinkLook === "small opening" || thinkLook === "go to small opening"){
                                 Opening();
                             }
-                            else if (thinkLook === "Go to writing" || "writing"){
+                            else if (thinkLook === "Go to writing" || thinkLook === "writing"){
                                 Wall();
               }            }
             
@@ -317,13 +329,105 @@ function TreePuzzle(){
         }
     }
         if(treebackandlookvalue==2){
-            alert("You now have all the information you need to solve the puzzle. Press the right button and the door will open, press the wrong one and something worse will happen.");
+            alert("You now have all the information you need to solve the puzzle. Press the right button and the door will open, press the wrong one and something worse will happen. Take as much time as you need before you answer, guess if you need to.");
+            var buttonTime= prompt("What button do you push \n - 1 \n - 2 \n - 3 \n - 4");
+            if(treepuzzleAmount==2){
+            switch(buttonTime){
+                case "1":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break;
+                case "2":
+                    alert("Once you press the button you hear the clinking of clogs and after a few seconds the door opens. Congrats you chose correct!");
+                    TeddyRoom();
+                    
+                    break;
+                case "3":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break;
+                        
+                case "4":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break;
+                }
+            }
+            
+            if(treepuzzleAmount==3){
+            switch(buttonTime){
+                case "1":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break;
+                case "2":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break;
+                case "3":
+                      alert("Once you press the button you hear the clinking of clogs and after a few seconds the door opens. Congrats you chose correct!");
+                    TeddyRoom();
+                    break;
+                case "4":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break; 
+                    
+                }
+            }
+            
+            if(treepuzzleAmount==4){
+            switch(buttonTime){
+                   case "1":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break;
+                case "2":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break;
+                case "3":
+                    alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
+                    if (deathV5){
+                        TreePuzzle();
+                    }
+                    break;
+                case "4":
+                      alert("Once you press the button you hear the clinking of clogs and after a few seconds the door opens. Congrats you chose correct!");
+                    TeddyRoom();
+                    break; 
+                    
+                }
+            }
         }
     
+    }
+function TeddyRoom(){
+   alert("bread");
+    Game();
 }
-         
-     
-         
-    
-
-
