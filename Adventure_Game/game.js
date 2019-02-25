@@ -71,7 +71,6 @@ alert("Welcome to the land of Drizdal" +playerName);
 */
 
 //Global Stuff
-/*
 var treebackandlookvalue=0;
 var checkInventory = function(){
     alert(" Key:" +inventory.key+"\n Note:"+inventory.key+"\n Egg:"+inventory.egg+"\n Teddy Bear:"+inventory.teddy_Bear+"\n Lantern:"+inventory.lantern);
@@ -98,11 +97,22 @@ if(treetreetree == "are two trees"){
     else if(treetreetree == "are four trees"){
     var treepuzzleAmount = 4;    
     }
-    */
-Game();
+    
+var deathAmount = 0;
+while(deathAmount==5){
+   confirm("You've died one too many times, Do you wish to start over?") 
+    if (confirm){
+        deathAmount==0;
+        Game();
+    }
+}  
+    Game();
 function Game() {
     document.write("Thanks for playing! Hope you enjoyed your stay in the puzzle \n If you didn't mean to stop playing either the Answer you typed wasn't recongnized or bomething broke, Reload the page and try again if you want to continue ");
     var playerName = prompt("What is your name?");
+    while(!confirm("Are you sure you want "+playerName+" as a name?")){
+        playerName = prompt("What name do you want?");
+    }
     alert("Welcome to the puzzle "+playerName);
     Start();
     function Start() {
@@ -269,6 +279,7 @@ function Game() {
                 switch(whiteBoy){
                 case "run away": case "run":
                 alert("You try to run away but as soon as it feels the vibration on the ground it starts after you, it quickly catches you and brings us to the end of your story.");
+                         deathAmount++;
                var deathV2 = confirm("YOU DIED \n - Do you wish to continue?");
                 if(deathV2)
                     Opening();
@@ -276,6 +287,7 @@ function Game() {
                 
                     case "fight":
                 alert("You decide to try and stand your ground. You charge at it. Once you start your charge it raises its head in suprise. When you get close to it, it opens its 'mouth' and brings us to the end of your story.");
+                        deathAmount++;
                 var deathV3 = confirm("YOU DIED \n - Do you wish to continue?");
                 if(deathV3)
                 Opening();
@@ -299,6 +311,7 @@ function Game() {
                         }
                         else if(inventory.egg==0){
                             alert("Sadly you don't have anything to give it. It rapidly picks up speed and is coming towards you. You scream right as it reaches you but its no use. We have reached the end of your story.")
+                            deathAmount++;
                             var deathV4 = confirm("YOU DIED \n - Do you wish to continue?");
                             if(deathV4)
                                 Opening();
@@ -335,6 +348,7 @@ function TreePuzzle(){
             switch(buttonTime){
                 case "1":
                     alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    deathAmount++;
                     var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
                     if (deathV5){
                         TreePuzzle();
@@ -347,6 +361,7 @@ function TreePuzzle(){
                     break;
                 case "3":
                     alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    deathAmount++;
                     var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
                     if (deathV5){
                         TreePuzzle();
@@ -355,6 +370,7 @@ function TreePuzzle(){
                         
                 case "4":
                     alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    deathAmount++;
                     var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
                     if (deathV5){
                         TreePuzzle();
@@ -367,6 +383,7 @@ function TreePuzzle(){
             switch(buttonTime){
                 case "1":
                     alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    deathAmount++;
                     var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
                     if (deathV5){
                         TreePuzzle();
@@ -374,6 +391,7 @@ function TreePuzzle(){
                     break;
                 case "2":
                     alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    deathAmount++;
                     var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
                     if (deathV5){
                         TreePuzzle();
@@ -385,6 +403,7 @@ function TreePuzzle(){
                     break;
                 case "4":
                     alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    deathAmount++;
                     var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
                     if (deathV5){
                         TreePuzzle();
@@ -412,6 +431,7 @@ function TreePuzzle(){
                     break;
                 case "3":
                     alert("That wasn't quite right, as soon as you press it you hear the clink of cogs and a mist starts to fill the room. You slowly drift off to sleep and brings the end of your story.");
+                    deathAmount++;
                     var deathV5 = confirm("YOU DIED \n - Do you wish to continue?");
                     if (deathV5){
                         TreePuzzle();
@@ -429,5 +449,7 @@ function TreePuzzle(){
     }
 function TeddyRoom(){
    alert("bread");
-    Game();
+    
 }
+
+
