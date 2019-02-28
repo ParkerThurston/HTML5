@@ -70,12 +70,16 @@ alert("Welcome to the land of Drizdal" +playerName);
 }
 */
 
+
+//still need a for, a while, a const use, and an end.
+
 //Global Stuff
 var treebackandlookvalue=0;
 var checkInventory = function(){
     alert(" Key:" +inventory.key+"\n Note:"+inventory.key+"\n Egg:"+inventory.egg+"\n Teddy Bear:"+inventory.teddy_Bear+"\n Lantern:"+inventory.lantern);
 }
-
+const loserlvl = 0;
+var spookedlvl = 0;
 var inventory = {
     key:1,
     note:1,
@@ -106,7 +110,7 @@ while(deathAmount==5){
         Game();
     }
 }  
-    Game();
+    TeddyRoom();
 function Game() {
     document.write("Thanks for playing! Hope you enjoyed your stay in the puzzle \n If you didn't mean to stop playing either the Answer you typed wasn't recongnized or bomething broke, Reload the page and try again if you want to continue ");
     var playerName = prompt("What is your name?");
@@ -448,7 +452,19 @@ function TreePuzzle(){
     
     }
 function TeddyRoom(){
-   alert("bread");
+    let spookedlvl = 100;
+   var teddytime = prompt("You walked through the tree door and once you got through it shut behind you. You are in a dim lit room and once you look around you see a kids room with themed wallpaper, that is ripped, rusted toys, and a sad looking crib in the middle of the room. There is one light in right above the crib that is flickering. You start to get a little creeped out. This is the next puzzle room. There isn't a door anywhere you can see though so it seems you are stuck. Do you \n - look around \n - look in your backpack \n - sit down and cry").toLowerCase();
+    
+    if(teddytime == "sit down and cry" || teddytime == "cry"){
+        var crytime = prompt("How long do you want to cry for? \n - Put just the number of minutes \n - max of 10 minutes ");
+        for (i=1; i<= crytime; i++){
+            alert("You spent a minute crying, your spook level goes down a little but your baby level goes up");
+            spookedlvl-=10;
+            alert("You are now "+spookedlvl+"% scared.");
+            alert("Sadly you are still "+loserlvl+"% of a loser");
+        }
+        TeddyRoom();
+    }
     
 }
 
