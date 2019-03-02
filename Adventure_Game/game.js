@@ -78,14 +78,14 @@ var treebackandlookvalue=0;
 var checkInventory = function(){
     alert(" Key:" +inventory.key+"\n Note:"+inventory.key+"\n Egg:"+inventory.egg+"\n Teddy Bear:"+inventory.teddy_Bear+"\n Lantern:"+inventory.lantern);
 }
-const loserlvl = 0;
+const loserlvl = 100;
 var spookedlvl = 0;
 var inventory = {
-    key:1,
-    note:1,
+    key:0,
+    note:0,
     egg:0,
-    teddy_Bear:1,
-    lantern:1,
+    teddy_Bear:0,
+    lantern:0,
 }
 function GetRandInt(max){
 var randInt = math.floor(Math.random()* Math.floor(max));
@@ -110,7 +110,7 @@ while(deathAmount==5){
         Game();
     }
 }  
-    TeddyRoom();
+    Game();
 function Game() {
     document.write("Thanks for playing! Hope you enjoyed your stay in the puzzle \n If you didn't mean to stop playing either the Answer you typed wasn't recongnized or bomething broke, Reload the page and try again if you want to continue ");
     var playerName = prompt("What is your name?");
@@ -454,7 +454,6 @@ function TreePuzzle(){
 function TeddyRoom(){
     let spookedlvl = 100;
    var teddytime = prompt("You walked through the tree door and once you got through it shut behind you. You are in a dim lit room and once you look around you see a kids room with themed wallpaper, that is ripped, rusted toys, and a sad looking crib in the middle of the room. There is one light in right above the crib that is flickering. You start to get a little creeped out. This is the next puzzle room. There isn't a door anywhere you can see though so it seems you are stuck. Do you \n - look around \n - look in your backpack \n - sit down and cry").toLowerCase();
-    
     if(teddytime == "sit down and cry" || teddytime == "cry"){
         var crytime = prompt("How long do you want to cry for? \n - Put just the number of minutes \n - max of 10 minutes ");
         for (i=1; i<= crytime; i++){
@@ -465,7 +464,46 @@ function TeddyRoom(){
         }
         TeddyRoom();
     }
+    if(teddytime == "look around" || teddytime=="look"){
+        teddyLookAround();
+    }
+    if(teddytime == "look in backpack" || teddytime == "backpack"){
+            checkInventory();
+        TeddyRoom();
+           
+}
     
 }
+function teddyLookAround(){
+    var x = 0;
+    alert("You decide to look a little closer at the crib and realize the bottom seems to have some sort of pressure plate on the base maybe if you put something on it");
+        var pressureplate = prompt("what do you want to put in the crib? \n - reply with something from your backpack as it is listed in the backpack").toLowerCase();
+        while(inventory.teddy_Bear==1){
+        switch(pressureplate){
+            case "teddy bear" :
+                alert("You decide to put the teddy bear into the crib. Once the teddy bear is in the crib you hear a faint click as the pressure plate sinks into the crib. The crib starts to move down into the ground revealing a secret passage. You enter the passage.");
+                x = 1;
+                End();
+            break;
+            default:
+                alert("You put the item on the crib and nothing seems to happen.");
+                teddyLookAround();
+                break;
+        }
+    }
+    while(inventory.teddy_Bear==0){   
+        alert("You put the item on the crib and nothing seems to happen.");
+        teddyLookAround();
+    
+    }
+    }
 
+function End(){
+    alert("After you climb down the hole opened up under the crib you see a single white door The crib closes back over top of you. You can see a bright white light on the other side of the door that is leaking light through the bottom of the door. Next to the door you see a single key hole");
+    if(inventory.key==1){
+alert("You open your backpack and take the key out. You put the key into the opening and turn, the door opens and you are surronded with the white light. ");
+    alert("THE END \n - Thanks for Playing")}
+    if(inventory.key==0)
+    alert("You look in your backpack and realize you didn't grab the key at the start. You just trapped yourself \n - GAME OVER \n - Feel free to try again")
+}
 
