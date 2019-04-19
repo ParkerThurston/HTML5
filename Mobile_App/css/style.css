@@ -1,5 +1,10 @@
 /* Stylesheet for Mobile App*/
 /*Reset*/
+
+/*
+font-family: 'Nova Round', cursive;
+font-family: 'VT323', monospace;
+*/
 html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6{
 margin:0;
 padding:0;
@@ -23,7 +28,7 @@ header{
 }
 header h1{
     color: #413b3b;
-    font-family: "Comic Sans MS",sans-serif;
+    font-family: 'Nova Round', cursive;
     font-size: 10em;
 }
 div#content{
@@ -34,12 +39,34 @@ div#content{
 nav#nav{
     width: 100%;
     background-color: azure;
-    color: ghostwhite;
-    font-family: cursive;
-    font-size: 1.5em;
+    color: red; 
+    font-family: 'VT323', monospace;
+    font-size: 1.8em;
+}
+nav ul{
+    list-style: none;
+
+}
+nav ul li{
+    float: left;
+    padding: 5px 15px; 
+    border-right: 2px solid #1e1e1e;
+
+}
+nav ul li a{
+color: red;
+text-decoration:none;
+
+}
+nav ul li a:hover{
+ color: gray;
+    
 }
 footer{
     width:100%;
     height: 50px;
     background-color: coral;
+}
+div.keepOpen{
+    clear: both;
 }
