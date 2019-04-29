@@ -83,7 +83,7 @@ background-color:#ff4141;
     color: white;
     font-size: 36px;
 }
-.icon-bar a hover{
+.icon-bar a:hover{
     background-color: #000;
 }
 .active{
