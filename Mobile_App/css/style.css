@@ -11,33 +11,50 @@ padding:0;
 }
 
 body{
-    background-color: black;
+    background-color: #29414c;
     
 }
 
 div#container{
     width: 100%;
-    border:3px dotted red;
-    background-color:chocolate;
+    height: 100%;
+    background-color:#29414c;
 }
 header{
     width:91.75%;
+    height:100%;
     padding: 50px;
-    background-color: antiquewhite;
+    background-color: #6f99ac;
+}
+header img#applogo{
+    display: block;
+    margin: auto;
+    width: 100px;
 }
 header h1{
-    color: #413b3b;
+    text-align: center;
+    color: #000000;
     font-family: 'Nova Round', cursive;
     font-size: 5em;
+}
+div#content{
+    text-align: center;
+    width: 100%;
+    height:100%;
+    background-color: #6f99ac;
+    font-size: 2em;
 }
 mark.red{
     color: #8537a7;
     background: none;
 }
-div#content{
-    width: 100%;
-    background-color: bisque;
-    font-size: 2em;
+div#infoDesktop{
+   font-size: 1.8em;
+    color: #7d7d7d;
+}
+div#infoPlaystation{
+   font-size: 1.8em;
+    color: #7d7d7d;
 }
 /*
 nav#nav{
@@ -76,7 +93,7 @@ background-color:#ff4141;
 }
 .icon-bar a{
     float: left;
-    width: 20%;
+    width: 14.285%;
     text-align: center;
     padding: 12px 0;
     transition: all 0.3s ease;
