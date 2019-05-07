@@ -52,9 +52,33 @@ div#infoDesktop{
    font-size: 1.8em;
     color: #7d7d7d;
 }
-div#infoPlaystation{
-   font-size: 1.8em;
+div#PSusername{
+   font-size: 3.8em;
     color: #7d7d7d;
+}
+div#ClanID{
+   font-size: 5em;
+    color: #7d7d7d;
+}
+div#infoPS{
+    text-align: center;
+    padding-top:100px;
+    background-color: #0c333c;
+    height: 300px;
+}
+div#PCusername{
+   font-size: 3.8em;
+    color: #7d7d7d;
+}
+div#ClanIDPC{
+   font-size: 5em;
+    color: #7d7d7d;
+}
+div#infoPC{
+    text-align: center;
+    padding-top:100px;
+    background-color: #0c333c;
+    height: 300px;
 }
 /*
 nav#nav{
@@ -103,8 +127,21 @@ background-color:#ff4141;
 .icon-bar a:hover{
     background-color: #000;
 }
+div#DccCircle img{
+    display: block;
+    margin: auto;
+    
+    
+    
+}
+
+
 .active{
     background-color: #ffa20e;
+}
+a:active img {
+    -webkit-transform: rotate(400deg);
+   -webkit-transition: -webkit-transform 2s ease-out;
 }
 /*
 footer{
