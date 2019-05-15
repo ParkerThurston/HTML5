@@ -21,7 +21,7 @@
             </div>
             
              
-            <!--
+            
             <div id="divcanvas">
                 <canvas id="canvas" width="800" height="800" style="background-color: #29414c"></canvas>
                 </div>
@@ -37,20 +37,33 @@
                     }
                     
                 function drawSections(){
-                    context.moveTo(150,0);
-                    context.lineTo(650,800);
+                    context.moveTo(190,59);
+                    context.lineTo(615,738);
                     context.stroke();
-                    context.moveTo(650,0);
-                    context.lineTo(150,800);
+                    context.moveTo(615,62);
+                    context.lineTo(190,741);
                     context.stroke();
                     context.moveTo(0,400);
                     context.lineTo(800,400);
                     context.stroke();
             
                 }
-                        fillCircle();
-                        drawSections();
-                </script> -->
+                function getDate(){
+                var now = new Date();
+                var day = now.getDate();
+                context.font = "30px Arial";
+                context.fillText(("Day: "+day),325,350);
+                    
+                if(day==15||month==1)
+                    context.translate(400,400);
+                    context.rotate(60*Math.PI/180);
+                    context.translate(-400,-400);
+                }
+                        
+                    getDate();    
+                    fillCrcle();
+                    drawSections();
+                </script> 
 
 
              <!--   <div id="DccCircle">

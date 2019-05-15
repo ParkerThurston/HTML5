@@ -175,7 +175,7 @@ background-color:#ff4141;
     font-size: 36px;
 }
 .icon-bar a:hover{
-    background-color: #5fa9dc;
+    background-color: #608888;
 }
 
 /*
@@ -229,3 +229,26 @@ div.keepOpen{
         font-size: 12px;
     }
 }
+
+legend, span, input, textarea {
+        display: block;
+        margin: auto;
+        text-align: center;
+        font-family: sans-serif;
+        color:#8537a7;
+}
+input[type=submit]{
+    display: block;
+    margin: auto;
+    text-align: center;
+    background-color: #797979;
+    color: #8537a7;
+    text-decoration: none;
+    font-size: 1.5em; 
+    cursor: pointer;
+}
+
+
+
+
+
