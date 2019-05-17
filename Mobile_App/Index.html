@@ -17,7 +17,7 @@
                   <img src="img/DCCIconPNG.png" alt="App Logo Broke" id="applogo">
             </header>
             <div id="content">
-                <h3>Circle</h3>
+                <h3>Cycle</h3>
             </div>
             
              
@@ -51,17 +51,18 @@
                 function getDate(){
                 var now = new Date();
                 var day = now.getDate();
+                var month = now.getMonth();
                 context.font = "30px Arial";
                 context.fillText(("Day: "+day),325,350);
                     
-                if(day==15||month==1)
+                if(day==17||month==5){
                     context.translate(400,400);
-                    context.rotate(60*Math.PI/180);
+                    context.rotate(0*Math.PI/180);
                     context.translate(-400,-400);
+                    }
                 }
-                        
                     getDate();    
-                    fillCrcle();
+                    fillCircle();
                     drawSections();
                 </script> 
 
