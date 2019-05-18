@@ -17,13 +17,13 @@
                   <img src="img/DCCIconPNG.png" alt="App Logo Broke" id="applogo">
             </header>
             <div id="content">
-                <h3>Cycle</h3>
+                <h3>WIP Cycle (Still needs complete text info but the cycle works)</h3>
             </div>
             
              
             
             <div id="divcanvas">
-                <canvas id="canvas" width="800" height="800" style="background-color: #29414c"></canvas>
+                <canvas id="canvas" width="800" height="800"></canvas>
                 </div>
                 <script>
                      var canvas = document.getElementById("canvas");
@@ -34,7 +34,60 @@
                     context.fillStyle="#5396d8"
                     context.arc(400, 400, 400, 0, 2 * Math.PI);
                     context.fill();
+                }
+                function weekScripts(){
+                     var now = new Date();
+                var day = now.getDate();
+                var month = now.getMonth()+1;
+                    context.translate(400,400);
+                     if(month==5){
+                if(day==14 || day==15 || day==16 || day==17 || day==18 || day== 19 || day==20){
+                    
+                    context.rotate(60*Math.PI/180);
+                        }
+                else if( day==21 || day == 22 || day==23 || day==24 || day==25 || day==26 || day==27){
+                    context.rotate(120*Math.PI/180); 
+                        }
+                     }
+                    else {
+                        context.fillText("something broke");
                     }
+                    
+                   context.rotate(0*Math.PI/180);
+                    context.fillStyle="#000"
+                    context.font = "30px Arial"
+                    context.fillText("Week 1",-50,-200);
+                    
+                    
+                   context.rotate(60*Math.PI/180);
+                    context.fillStyle="#000"
+                    context.font = "30px Arial"
+                    context.fillText("Week 2",-50,-200);
+                    
+                    context.rotate(60*Math.PI/180);
+                    context.fillStyle="#000"
+                    context.font = "30px Arial"
+                    context.fillText("Week 3",-50,-200);
+                    
+                    context.rotate(60*Math.PI/180);
+                    context.fillStyle="#000"
+                    context.font = "30px Arial"
+                    context.fillText("Week 4",-50,-200);
+                    
+                    context.rotate(60*Math.PI/180);
+                    context.fillStyle="#000"
+                    context.font = "30px Arial"
+                    context.fillText("Week 5",-50,-200);
+                    
+                    context.rotate(60*Math.PI/180);
+                    context.fillStyle="#000"
+                    context.font = "30px Arial"
+                    context.fillText("Week 6",-50,-200);
+                    
+                          
+                     
+                }
+                
                     
                 function drawSections(){
                     context.moveTo(190,59);
@@ -48,25 +101,29 @@
                     context.stroke();
             
                 }
-                function getDate(){
-                var now = new Date();
-                var day = now.getDate();
-                var month = now.getMonth();
-                context.font = "30px Arial";
-                context.fillText(("Day: "+day),325,350);
                     
-                if(day==17||month==5){
-                    context.translate(400,400);
-                    context.rotate(0*Math.PI/180);
-                    context.translate(-400,-400);
-                    }
-                }
-                    getDate();    
+                
+                  
+                     
                     fillCircle();
                     drawSections();
+                    weekScripts();
                 </script> 
-
-
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br> 
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
              <!--   <div id="DccCircle">
             <a href="#" id="DCC"><img width="800" height="800" src="img/DCCIconPNG.png"/></a>
             </div> -->
